@@ -10,7 +10,7 @@ import 'package:services_app/core/utils/app_images/app_images.dart';
 import 'package:services_app/core/utils/app_icons/app_icons.dart';
 class SplashScreen extends StatelessWidget {
   SplashScreen({super.key});
-  final SplashController controller = Get.put(SplashController());
+  //final SplashController controller = Get.put(SplashController());
   @override
   Widget build(BuildContext context) {
     final double screenWidth = GetMediaQuery.getWidth(context);
@@ -20,8 +20,8 @@ class SplashScreen extends StatelessWidget {
         builder: (context, orientation) {
           bool portrait = Orientations.isPortrait(context);
           return Container(
-            height: screenHeight * 0.9,
-            width: screenWidth * 0.9,
+            //height: screenHeight * 0.9,
+          //  width: screenWidth * 0.9,
             decoration: BoxDecoration(color: AppColors.greenColor),
             child: Center(
               //-----------------------portrait----------------------
@@ -29,11 +29,19 @@ class SplashScreen extends StatelessWidget {
                   ? Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset(
-                    AppImages.splash,
-                    width: screenWidth * 0.5,
-                    height: screenHeight * 0.3,
-                    fit: BoxFit.contain,
+                  Container(
+                    height: screenHeight*0.1,
+                    width: screenWidth*0.2,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(18),
+                      color: AppColors.blackColor,
+                    ),
+                    child: Image.asset(
+                      AppImages.splash,
+                      width: screenWidth * 0.5,
+                      height: screenHeight * 0.3,
+                      fit: BoxFit.contain,
+                    ),
                   ),
                   AppText(
                     text: 'Mafi Mushkil',
