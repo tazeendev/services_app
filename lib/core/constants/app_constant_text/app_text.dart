@@ -9,8 +9,9 @@ class AppText extends StatelessWidget {
   final TextAlign textAlign;
   final double? customFontSize;
   final String fontFamily;
-  AppText({super.key, required this.text, this.textColor=AppColors.blackColor, this.fontWeight=FontWeight.w600,
-    this.textAlign=TextAlign.center, this.customFontSize, this.fontFamily='Poopin',});
+  AppText({super.key, required this.text, this.textColor=AppColors.blackColor,
+    this.fontWeight=FontWeight.bold,
+    this.textAlign=TextAlign.center, this.customFontSize, this.fontFamily='Roboto Flex',});
 
   @override
   Widget build(BuildContext context) {

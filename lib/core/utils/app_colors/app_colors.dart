@@ -20,5 +20,5 @@ class AppColors{
   static const Color updateNameColor=Color(0xff3FAD46);
   static const Color greyColor=Color(0xff737373);
   static const Color feildTextColor=Color(0xff33353C);
- // static const Color lightGreenColor=Color(0xff)
+  static const Color lightGreenColor=Color(0xffA4DD00);
 }
