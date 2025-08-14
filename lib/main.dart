@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:services_app/app/app_linker/app_links.dart';
+import 'package:services_app/app/app_pages/app_pages.dart';
+import 'package:services_app/app/app_routes/app_routes.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,11 +17,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Flutter Demo',
+      title: 'Services App',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+        initialRoute: AppRoutes.splash,
+      getPages:AppPages.routes,
     );
   }
 }
@@ -65,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
     );
   }
 }
