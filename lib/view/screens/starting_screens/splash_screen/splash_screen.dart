@@ -10,7 +10,7 @@ import 'package:services_app/core/utils/app_images/app_images.dart';
 import 'package:services_app/core/utils/app_icons/app_icons.dart';
 class SplashScreen extends StatelessWidget {
   SplashScreen({super.key});
-  //final SplashController controller = Get.put(SplashController());
+  final SplashController controller = Get.put(SplashController());
   @override
   Widget build(BuildContext context) {
     final double screenWidth = GetMediaQuery.getWidth(context);

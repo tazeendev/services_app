@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:services_app/core/constants/app_constant_text/app_text.dart';
 import 'package:services_app/core/constants/custom_button/custom_button.dart';
 import 'package:services_app/core/responsive_layout/dimensions/dimensions.dart';
@@ -16,17 +18,24 @@ class WelcomeScreen extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          AppText(text: 'Best Helping \nHands for you'),
-          AppText(text: 'With Our On-Demand Services App, \n We Give Better Services To You.',
-            customFontSize: Dimensions.getSmallSize(context),textAlign: TextAlign.center,textColor: AppColors.greyColor,),
+          SizedBox(height: screenHeight*0.1,),
+          AppText(text: 'Best Helping \nHands for you',customFontSize: Dimensions.getLargeSize(context),fontWeight: FontWeight.bold,),
+          SizedBox(height: screenHeight*0.01,),
+          AppText(text: 'With Our On-Demand Services App, \n We Give Better Services To You.',fontWeight: FontWeight.w500,
+            customFontSize: Dimensions.getSmallSize(context)*1.9,textAlign: TextAlign.center,textColor: AppColors.greyColor,),
+          SizedBox(height: screenHeight*0.05),
           Container(
-            height:screenHeight*0.1,
+            height:screenHeight*0.4,
             width: double.infinity,
             decoration: BoxDecoration(
               image:DecorationImage(image: AssetImage(AppImages.welcomeSplash)),
             ),
           ),
-          CustomButton(text: 'Get Started', onTap: (){}, height: screenHeight*0.09, width:double.infinity),
+          Spacer(),
+          CustomButton(text: 'Get Started', onTap: (){
+            Get.toNamed('/onboarding');
+          }, height: screenHeight*0.075, width:screenWidth*0.9,textColor: AppColors.greenColor,),
+       SizedBox(height: screenHeight*0.08,),
         ],
       ),
     ) ;
