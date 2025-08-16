@@ -7,7 +7,6 @@ import 'package:services_app/core/responsive_layout/dimensions/dimensions.dart';
 import 'package:services_app/core/responsive_layout/media_queries/media_queries.dart';
 import 'package:services_app/core/utils/app_colors/app_colors.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-
 class OnboardingScreen extends StatelessWidget {
   OnboardingScreen({super.key});
   final OnboardingController controller = Get.put(OnboardingController());
@@ -32,14 +31,12 @@ class OnboardingScreen extends StatelessWidget {
                       child: Column(
                         children: [
                           Container(
-                            height: screenHeight * 0.45,
+                            height: screenHeight * 0.55,
                             child: Image.asset(
                               data['image']!,
                               fit: BoxFit.contain,
                             ),
                           ),
-
-                          SizedBox(height: screenHeight * 0.03),
                           AppText(
                             text: data['title']!,
                             customFontSize: Dimensions.getLargeSize(context),
@@ -47,29 +44,29 @@ class OnboardingScreen extends StatelessWidget {
                             textAlign: TextAlign.center,
                           ),
 
-                          SizedBox(height: screenHeight * 0.02),
+                          SizedBox(height: screenHeight * 0.01),
                           AppText(
                             text: data['description']!,
-                            customFontSize: Dimensions.getSmallSize(context),
+                            textColor: AppColors.greyColor,
+                            customFontSize: Dimensions.getSmallSize(context)*2,
                             textAlign: TextAlign.center,
                           ),
 
-                          SizedBox(height: screenHeight * 0.04),
-                          Obx(
-                                () => SmoothPageIndicator(
+                          SizedBox(height: screenHeight * 0.05),
+                          SmoothPageIndicator(
                               controller: controller.pageController,
                               count: controller.pages.length,
                               effect: ExpandingDotsEffect(
-                                activeDotColor: AppColors.greenColor,
-                                dotColor: AppColors.blackColor,
+                                activeDotColor: AppColors.blackColor,
+                                dotColor: AppColors.lightGreyColor,
                                 dotHeight: 10,
                                 dotWidth: 10,
-                                spacing: 8,
+                                spacing: 5,
+                                expansionFactor:1.1,
+                                radius: 5,
                               ),
                             ),
-                          ),
-
-                          SizedBox(height: screenHeight * 0.04),
+                          SizedBox(height: screenHeight * 0.06),
                           Obx(
                                 () => Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -81,7 +78,7 @@ class OnboardingScreen extends StatelessWidget {
                                     style: TextStyle(
                                       color: AppColors.blackColor,
                                       fontWeight: FontWeight.w500,
-                                      fontSize: Dimensions.getSmallSize(context),
+                                      fontSize: Dimensions.getSmallSize(context)*3,
                                     ),
                                   ),
                                 ),
@@ -91,6 +88,7 @@ class OnboardingScreen extends StatelessWidget {
                                       ? "Finish"
                                       : "Next",
                                   onTap: controller.nextPage,
+                                  textColor: AppColors.greenColor,
                                   height: screenHeight * 0.07,
                                   width: screenWidth * 0.35,
                                 ),
