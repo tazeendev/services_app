@@ -7,14 +7,12 @@ import 'package:services_app/view/screens/orders_screen/orders_screen.dart';
 import 'package:services_app/view/screens/promotion_screen/promotion_screen.dart';
 class NavigationScreen extends StatefulWidget {
   const NavigationScreen({super.key});
-
   @override
   State<NavigationScreen> createState() => _NavigationScreenState();
 }
-
 class _NavigationScreenState extends State<NavigationScreen> {
-  int currentIndex=0;
-  final List<Widget> screens=[
+  int currentIndex = 0;
+  final List<Widget> screens = [
     HomeScreen(),
     OrdersScreen(),
     PromotionScreen(),
@@ -26,26 +24,34 @@ class _NavigationScreenState extends State<NavigationScreen> {
       body: screens[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
-        onTap:(index)
-        {
+        onTap: (index) {
           setState(() {
-            currentIndex=index;
+            currentIndex = index;
           });
-    },
-          selectedItemColor: AppColors.blackColor,
-          unselectedItemColor: AppColors.greyColor,
-          backgroundColor: AppColors.whiteColor,
-          type: BottomNavigationBarType.fixed,
-          items: [
-            BottomNavigationBarItem(
-              icon: ImageIcon(AssetImage(AppIcons.home),), label: 'Home',),
-            BottomNavigationBarItem(icon: ImageIcon(AssetImage(AppIcons.orders))
-                ,label: 'Orders'),
-            BottomNavigationBarItem(icon:ImageIcon(AssetImage(AppIcons.promotion,)),label: 'Promotions' ),
-            BottomNavigationBarItem(icon:ImageIcon(AssetImage(AppIcons.notification,)),
-                label: 'Promotions' ),
-          ]),
-
+        },
+        selectedItemColor: AppColors.blackColor,
+        unselectedItemColor: AppColors.greyColor,
+        backgroundColor: AppColors.whiteColor,
+        type: BottomNavigationBarType.fixed,
+        items: [
+          BottomNavigationBarItem(
+            icon: ImageIcon(AssetImage(AppIcons.home)), // no color here
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: ImageIcon(AssetImage(AppIcons.orders)),
+            label: 'Orders',
+          ),
+          BottomNavigationBarItem(
+            icon: ImageIcon(AssetImage(AppIcons.promotion)),
+            label: 'Promotions',
+          ),
+          BottomNavigationBarItem(
+            icon: ImageIcon(AssetImage(AppIcons.notification)),
+            label: 'Notifications',
+          ),
+        ],
+      ),
     );
   }
 }

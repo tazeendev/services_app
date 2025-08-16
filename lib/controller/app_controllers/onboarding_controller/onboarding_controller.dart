@@ -30,7 +30,7 @@ class OnboardingController extends GetxController{
       pageController.nextPage(duration: Duration(milliseconds: 400), curve: Curves.easeInOut);
     }
     else{
-      Get.offNamed('/verification');
+      Get.offNamed('/bottombar');
     }
   }
   void skipToLast(){

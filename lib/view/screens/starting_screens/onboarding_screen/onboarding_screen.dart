@@ -31,7 +31,7 @@ class OnboardingScreen extends StatelessWidget {
                       child: Column(
                         children: [
                           Container(
-                            height: screenHeight * 0.55,
+                            height: screenHeight * 0.56,
                             child: Image.asset(
                               data['image']!,
                               fit: BoxFit.contain,
