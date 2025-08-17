@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../controller/app_controllers/home_controller/comapny_info/register_controller/register_controller.dart';
+import '../../../../controller/app_controllers/home_controller/comapny_info/company_controller/register_controller.dart';
 import '../../../widgets/company_register_form/register_feild.dart';
 class RegisterCompanyScreen extends StatelessWidget {
   RegisterCompanyScreen({super.key});
