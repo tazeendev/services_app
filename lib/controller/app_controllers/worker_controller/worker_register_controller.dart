@@ -113,7 +113,7 @@ class RegisterCompanyController extends GetxController {
                             ? AppColors.blackColor.withOpacity(0.2)
                             : null,
                         onTap: () {
-                          setWorkerType(worker['title']!);
+                          setWorkerType(country['title']!);
                         },
                       ),
                       Divider(),
