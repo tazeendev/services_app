@@ -10,8 +10,8 @@ import 'package:services_app/core/responsive_layout/dimensions/dimensions.dart';
 import 'package:services_app/core/responsive_layout/media_queries/media_queries.dart';
 import 'package:services_app/core/utils/app_colors/app_colors.dart';
 import 'package:services_app/core/utils/app_icons/app_icons.dart';
-class VerificationScreen extends StatelessWidget {
-  VerificationScreen({super.key});
+class OtpScreen extends StatelessWidget {
+  OtpScreen({super.key});
   final AuthController controller = Get.put(AuthController());
   TextEditingController phoneController = TextEditingController();
   @override
@@ -28,40 +28,16 @@ class VerificationScreen extends StatelessWidget {
               color: AppColors.greenColor,
               shape: BoxShape.circle,
             ),
-            child: Image(image: AssetImage(AppIcons.mobile)),
+            child: Image(image: AssetImage(AppIcons.chat)),
           ),
           AppText(text: 'Enter Your Phone Number \n for Verification'),
           AppText(
-            text: 'phone Number ',
+            text: 'A verification code has been sent \n to you via SMS',
             customFontSize: Dimensions.getSmallSize(context),
             textColor: AppColors.greyColor,
           ),
-          Row(
-            children: [
-              GestureDetector(
-                onTap: () {
-                  showCountryPicker(
-                    context: context,
-                    showPhoneCode: true,
-                    onSelect: (Country country) {
-                      controller.countryCode.value = "+${country.phoneCode}";
-                      controller.flag.value = country.flagEmoji;
-                    },
-                  );
-                },
-                child: Obx(()=>Container(
-                  child: Row(
-                    children: [
-                      Text(controller.flag.value),
-                      Text(controller.countryCode.value),
-                    ],
-                  ),
-                )),
-              ),
-              Expanded(child: TextFormFeildWidget(text: '321456987', controller: phoneController,
-                  height: screenHeight*0.2, width:screenWidth*0.9)),
-            ],
-          ),
+              TextFormFeildWidget(text: '321456987', controller: phoneController,
+                  height: screenHeight*0.2, width:screenWidth*0.9),
           //---------------------button backend logic---------------------
           CustomButton(text: 'verify', onTap: (){
           }, height: screenHeight*0.5, width: screenWidth*0.9)

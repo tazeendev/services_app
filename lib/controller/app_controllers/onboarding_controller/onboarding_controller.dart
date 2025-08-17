@@ -4,6 +4,7 @@ import 'package:services_app/core/utils/app_images/app_images.dart';
 class OnboardingController extends GetxController{
   final pageController=PageController();
   var currentPage=0.obs;
+  //------------------map for onbaording data -----------------------
   final List<Map<String,String>> pages=[
   {
     'title':'Choose a service',
@@ -30,7 +31,7 @@ class OnboardingController extends GetxController{
       pageController.nextPage(duration: Duration(milliseconds: 400), curve: Curves.easeInOut);
     }
     else{
-      Get.offNamed('/bottombar');
+      Get.offNamed('/verification');
     }
   }
   void skipToLast(){
