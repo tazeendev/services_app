@@ -7,14 +7,14 @@ import '../../../core/utils/app_images/app_images.dart';
 
 class HomeController extends GetxController {
   final List<Map<String, String>> services = [
-    {'name': '', 'image': AppImages.cleaning},
-    {'name': '', 'image': AppImages.repairing},
-    {'name': '', 'image': AppImages.electricion},
-    {'name': '', 'image': AppImages.carpenter},
-    {'name': '', 'image': AppImages.repairing},
-    {'name': '', 'image': AppImages.electricion},
-    {'name': '', 'image': AppImages.carpenter},
-    {'name': '', 'image': AppImages.repairing},
-    {'name': '', 'image': AppImages.more},
+    {'name': 'cleaning', 'image': AppImages.cleaning},
+    {'name': 'Repairing', 'image': AppImages.repairing},
+    {'name': 'Electrician', 'image': AppImages.electricion},
+    {'name': 'Carpenter', 'image': AppImages.carpenter},
+    {'name': 'Reparing', 'image': AppImages.repairing},
+    {'name': 'Electricion', 'image': AppImages.electricion},
+    {'name': 'Carpenter', 'image': AppImages.carpenter},
+    {'name': 'Reparing', 'image': AppImages.repairing},
+    {'name': 'More', 'image': AppImages.more},
   ];
 }
